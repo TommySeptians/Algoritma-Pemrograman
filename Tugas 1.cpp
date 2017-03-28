@@ -2,11 +2,13 @@
 #include <iomanip>
 using namespace std;
 
+// versi 0.9
+
 // prototype
 	void	prosesMasuk ();
 	void	jumlahMahasiswa ();
 	void	inputMahasiswa ();
-    char*	namaMahasiswa (int a);
+    	char*	namaMahasiswa (int a);
 	float	nilaiMahasiswa (int a);
 	bool	isWithinRange (int a);
 	void	tampilData();
