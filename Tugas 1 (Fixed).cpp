@@ -22,7 +22,7 @@ int main () {
 
 void inputNilai () {
 	do {
-		cout << "Masukkan Nilai : ";
+		cout << "Masukkan Nilai IP : ";
 		cin >> X;
 		isWithinRange (X, 4, 0);
 	}
