@@ -2,7 +2,7 @@
 #include <iomanip>
 using namespace std;
 
-// version 1.00
+// versi 1.00
 
 // prototype
 void inputNilai ();
