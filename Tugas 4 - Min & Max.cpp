@@ -1,4 +1,5 @@
 #include <iostream>
+#include <stdlib.h>
 using namespace std;
 
 void pilihanA ();
@@ -8,30 +9,39 @@ int banyak, n, nilai, muncul = 0;
 
 int main () {
 	char kode;
-	cout << "Tentukan Pilihan Nilai (A/B): ";
-	cin >> kode;
-	switch (kode) {
-		case 'A' :
-		case 'a' :
-			pilihanA ();
-			break;
-		case 'B' :
-		case 'b' :
-			pilihanB ();
-			break;
-		default :
-			cout << "Anda Salah Memasukkan Pilihan.\n\n";
-			main ();
-			break;
+	cout << "Masukkan Banyaknya Nilai    : ";
+	cin >> banyak;
+	if (banyak > 0) {
+		pilihan: {
+			cout << "Tentukan Pilihan Nilai (A/B): ";
+			cin >> kode;
+			cout << endl;
+			switch (kode) {
+				case 'A' :
+				case 'a' :
+					pilihanA ();
+					break;
+				case 'B' :
+				case 'b' :
+					pilihanB ();
+					break;
+				default :
+					cout << "Anda Salah Memasukkan Pilihan.\n\n\n";
+					cout << "Masukkan Banyaknya Nilai    : " << banyak << endl;
+					goto pilihan;
+					break;
+			}
+		}
 	}
+	else {
+		cout << "\nMasukan Salah.";
+	}
+	cout << endl;
 	return 0;
 }
 
 void pilihanA () {
 	int min = 2147483647;
-	cout << "Masukkan Banyaknya Nilai    : ";
-	cin >> banyak;
-	cout << endl;
 	for (n = 1; n <= banyak; n++) {
 		cout << "Masukkan Nilai Ke-" << n << "\t : ";
 		cin >> nilai;
@@ -43,20 +53,12 @@ void pilihanA () {
 			muncul++;
 		}
 	}
-	if (banyak > 0) {
-		cout << endl << "Nilai Minimum                    : " << min;
-		cout << endl << "Banyaknya Kemunculan Nilai Min   : " << muncul;
-	}
-	else {
-		cout << "Masukan Salah." << endl;
-	}
+		cout << "\nNilai Minimum                    : " << min;
+		cout << "\nBanyaknya Kemunculan Nilai Min   : " << muncul;
 }
 
 void pilihanB () {
 	int max = -2147483647;
-	cout << "Masukkan Banyaknya Nilai    : ";
-	cin >> banyak;
-	cout << endl;
 	for (n = 1; n <= banyak; n++) {
 		cout << "Masukkan Nilai Ke-" << n << "\t : ";
 		cin >> nilai;
@@ -68,11 +70,6 @@ void pilihanB () {
 			muncul++;
 		}
 	}
-	if (banyak > 0) {
-		cout << endl << "Nilai Maksimum                   : " << max;
-		cout << endl << "Banyaknya Kemunculan Nilai Maks  : " << muncul;
-	}
-	else {
-		cout << "Masukan Salah." << endl;
-	}
+		cout << "\nNilai Maksimum                   : " << max;
+		cout << "\nBanyaknya Kemunculan Nilai Maks  : " << muncul;
 }
