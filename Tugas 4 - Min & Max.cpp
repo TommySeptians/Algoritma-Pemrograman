@@ -12,9 +12,11 @@ int main () {
 	cin >> kode;
 	switch (kode) {
 		case 'A' :
+		case 'a' :
 			pilihanA ();
 			break;
 		case 'B' :
+		case 'b' :
 			pilihanB ();
 			break;
 		default :
